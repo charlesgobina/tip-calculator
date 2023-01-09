@@ -1,3 +1,52 @@
-div {
-  background-color: aqua;
+.tipOptions {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  justify-items: stretch;
+  align-content: space-between;
+}
+
+.tipGreen {
+  color: #5e7a7d;
+  font-weight: 400;
+}
+
+.tipBtn {
+  padding: 8px 0;
+}
+
+.tipBtn:nth-child(even) {
+  text-align: right;
+}
+
+.tipOptions button {
+  padding: 8px 0;
+  font-size: 21px;
+  font-weight: 700;
+  background-color: #0d494d;
+  color: #fff;
+  width: 95%;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+
+button:focus {
+  background-color: #32c0ab;
+}
+
+.tipIn {
+  padding: 8px 0;
+  text-align: center;
+  font-size: 21px;
+  font-weight: 700;
+  width: 95%;
+  background-color: #f4fafa;
+  border: none;
+  outline: none;
+  color: #0d494d;
+  border-radius: 5px;
+}
+
+.tipIn::placeholder {
+  color: #0d494d;
 }
