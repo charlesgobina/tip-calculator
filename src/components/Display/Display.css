@@ -1,3 +1,41 @@
-div {
-  background-color: aqua;
+.displayWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: #0d494d;
+  color: #fff;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.displayWrapper .totalAmt {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.totalAmt > div {
+  display: flex;
+  flex-direction: column;
+  font-weight: 700;
+}
+
+.totalAmt > div > span.person {
+  color: #32c0ab;
+}
+
+.totalAmt > span {
+  color: #32c0ab;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.displayWrapper > button {
+  padding: 5px 0;
+  font-size: 24px;
+  background-color: #32c0ab;
+  color: #fff;
+  border: none;
+  outline: none;
+  border-radius: 5px;
 }
