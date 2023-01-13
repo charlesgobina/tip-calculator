@@ -1,7 +1,7 @@
 .lhsWrapper {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 25px;
   padding: 20px;
   background-color: #fff;
   border-radius: 20px;
