@@ -1,23 +1,31 @@
+import PropTypes from 'prop-types';
+import ResetButton from '../ResetButton/resetButton';
 import './Display.css';
 
-const Display = () => (
+const Display = ({ bill, handleBillReset }) => (
   <div className="displayWrapper">
     <div className="totalAmt">
       <div>
         <span>Tip Amount</span>
         <span className="person">/ person</span>
       </div>
-      <span>$0.00</span>
+      <span>{`$ ${bill}`}</span>
     </div>
     <div className="totalAmt">
       <div>
         <span>Total</span>
         <span className="person">/ person</span>
       </div>
-      <span>$0.00</span>
+      <span>{`$ ${bill}`}</span>
     </div>
-    <button type="button">RESET</button>
+    <ResetButton handleBillReset={handleBillReset} />
   </div>
 );
+
+// prop validation
+Display.propTypes = {
+  bill: PropTypes.number.isRequired,
+  handleBillReset: PropTypes.func.isRequired,
+};
 
 export default Display;
