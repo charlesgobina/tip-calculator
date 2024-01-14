@@ -7,20 +7,19 @@ import People from '../People/People';
 import './Wrapper.css';
 
 const Wrapper = () => {
-  const [bill, setBill] = useState(0);
-
-  // the value of bill
+  const [bill, setBill] = useState('');
+  const [tip, setTip] = useState(0);
 
   // clear bill input on reset button click
   const handleBillReset = () => {
-    setBill(0);
+    setBill('');
   };
   return (
     <div className="lhsWrapper">
       <Bill setBill={setBill} bill={bill} />
-      <Tip />
+      <Tip setTip={setTip} bill={bill} />
       <People />
-      <Display bill={bill} handleBillReset={handleBillReset} />
+      <Display tip={tip} bill={bill} handleBillReset={handleBillReset} />
     </div>
   );
 };

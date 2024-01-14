@@ -6,8 +6,13 @@ import { ReactComponent as Dollar } from '../../assets/images/icon-dollar.svg';
 
 const Bill = ({ setBill, bill }) => {
   const handleBillChange = (e) => {
-    setBill(parseInt(e.target.value, 10));
+    const inputValue = e.target.value;
+    if (!Number.isNaN(inputValue) || inputValue === '') {
+      setBill(parseInt(e.target.value, 10));
+    }
   };
+
+  console.log(bill);
 
   return (
     <div className="billWrapper">
@@ -26,8 +31,16 @@ const Bill = ({ setBill, bill }) => {
 
 // prop validation
 Bill.propTypes = {
-  bill: PropTypes.number.isRequired,
+  bill: PropTypes.oneOfType([
+    PropTypes.string.isRequired,
+    PropTypes.number.isRequired,
+    // Add more types as needed
+  ]),
   setBill: PropTypes.func.isRequired,
+};
+
+Bill.defaultProps = {
+  bill: PropTypes.string.isRequired, // Provide a default value based on the expected type
 };
 
 export default Bill;

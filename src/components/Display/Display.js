@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import ResetButton from '../ResetButton/resetButton';
 import './Display.css';
 
-const Display = ({ bill, handleBillReset }) => (
+const Display = ({ bill, handleBillReset, tip }) => (
   <div className="displayWrapper">
     <div className="totalAmt">
       <div>
@@ -16,7 +16,7 @@ const Display = ({ bill, handleBillReset }) => (
         <span>Total</span>
         <span className="person">/ person</span>
       </div>
-      <span>{`$ ${bill}`}</span>
+      <span>{`$ ${tip}`}</span>
     </div>
     <ResetButton handleBillReset={handleBillReset} />
   </div>
@@ -24,8 +24,17 @@ const Display = ({ bill, handleBillReset }) => (
 
 // prop validation
 Display.propTypes = {
-  bill: PropTypes.number.isRequired,
+  bill: PropTypes.oneOfType([
+    PropTypes.string.isRequired,
+    PropTypes.number.isRequired,
+    // Add more types as needed
+  ]),
   handleBillReset: PropTypes.func.isRequired,
+  tip: PropTypes.number.isRequired,
+};
+
+Display.defaultProps = {
+  bill: PropTypes.string.isRequired, // Provide a default value based on the expected type
 };
 
 export default Display;
